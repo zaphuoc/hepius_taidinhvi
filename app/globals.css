@@ -1,0 +1,43 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+@custom-variant dark (&:is(.dark *));
+:root { color-scheme: light; --background: #f4f8fb; --foreground: #0f172a; --border: #dbe4ec; --radius: .65rem; }
+@theme inline { --color-background: var(--background); --color-foreground: var(--foreground); --color-border: var(--border); }
+* { @apply border-border; }
+body { @apply bg-background text-foreground; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+button, a { -webkit-tap-highlight-color: transparent; }
+.eyebrow { @apply text-[10px] font-bold uppercase tracking-[.18em] text-teal-700; }
+.section-title { @apply mt-1 text-xl font-bold tracking-tight text-slate-900; }
+.candidate-card { @apply w-full rounded-xl border border-slate-200 bg-white p-4 text-left shadow-sm transition hover:-translate-y-0.5 hover:border-teal-300 hover:shadow-md; }
+.candidate-card.selected { @apply border-teal-500 bg-teal-50/35 ring-1 ring-teal-500; }
+.rank { @apply flex size-7 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-xs font-bold text-slate-500; }
+.rank.top { @apply bg-teal-600 text-white; }
+.score, .direction { @apply rounded-md bg-slate-100 px-2 py-1 text-[10px] font-bold text-slate-600; }
+.direction { @apply bg-sky-50 text-sky-700; }
+.sign-badge { @apply inline-flex items-center gap-1 rounded-md border px-2 py-1 text-[10px] font-bold; }
+.sign-badge.negative { @apply border-rose-300 bg-rose-50 text-rose-700; }
+.sign-badge.positive { @apply border-emerald-300 bg-emerald-50 text-emerald-700; }
+.sign-badge.neutral { @apply border-amber-300 bg-amber-50 text-amber-700; }
+.panel { @apply rounded-xl border border-slate-200 bg-white p-5 shadow-sm; }
+.panel-heading { @apply mb-5 flex items-start justify-between gap-4 border-b border-slate-100 pb-4; }
+.panel-heading h3 { @apply text-base font-bold text-slate-900; }
+.panel-heading p { @apply mt-1 text-xs text-slate-500; }
+.status-pill { @apply rounded-full border px-2.5 py-1 text-[10px] font-bold; }
+.status-pill.positive { @apply border-emerald-200 bg-emerald-50 text-emerald-700; }
+.status-pill.soft { @apply border-amber-200 bg-amber-50 text-amber-700; }
+.status-pill.negative { @apply border-rose-200 bg-rose-50 text-rose-700; }
+.pipeline { @apply flex gap-2 overflow-x-auto pb-3; }
+.pipeline-item { @apply flex min-w-max items-center gap-2; }
+.node { @apply flex min-h-[70px] min-w-[115px] flex-col justify-center rounded-lg border px-3 py-2; }
+.node span { @apply text-[9px] font-bold uppercase tracking-wider opacity-70; }
+.node b { @apply mt-1 text-xs leading-tight; }
+.node-compound { @apply border-blue-200 bg-blue-50 text-blue-800; }.node-gene { @apply border-violet-200 bg-violet-50 text-violet-800; }.node-process { @apply border-amber-200 bg-amber-50 text-amber-800; }.node-hemodynamics { @apply border-cyan-200 bg-cyan-50 text-cyan-800; }.node-disease { @apply border-rose-200 bg-rose-50 text-rose-800; }
+.edge { @apply flex min-w-[76px] flex-col items-center gap-1 text-[9px] font-bold text-slate-400; }.edge svg { @apply size-4 text-slate-400; }
+.formula-box { @apply mt-2 flex flex-col gap-3 rounded-lg border border-teal-200 bg-teal-50 p-4 sm:flex-row sm:items-center sm:justify-between; }.formula { @apply mt-1 text-lg font-bold tracking-tight text-slate-900; }.match-badge { @apply rounded-full bg-teal-600 px-3 py-1.5 text-xs font-bold text-white; }
+.explanation { @apply mt-3 flex gap-3 rounded-lg border border-slate-200 bg-slate-50 p-3 text-xs leading-5 text-slate-600; }.explanation svg { @apply size-4 shrink-0 text-teal-600; }
+.evidence-card { @apply rounded-lg border border-slate-200 bg-white p-4 transition hover:border-teal-300; }.evidence-card blockquote { @apply mt-3 border-l-2 border-teal-400 pl-3 text-xs italic leading-5 text-slate-600; }.evidence-card svg { @apply size-4; }
+.metrics { @apply grid gap-3 sm:grid-cols-2 lg:grid-cols-4; }.metric { @apply rounded-lg border border-slate-200 bg-slate-50 p-3; }.metric span { @apply text-[10px] font-bold text-teal-700; }.metric b { @apply mt-2 block text-xl text-slate-900; }.metric small { @apply mt-1 block text-[10px] leading-4 text-slate-500; }
+.invest-card { @apply rounded-xl border bg-white p-5 shadow-sm; }.invest-card h3 { @apply flex items-center gap-2 text-sm font-bold; }.invest-card h3 svg { @apply size-4; }.invest-card ul { @apply mt-5 flex flex-col gap-3 text-sm leading-5 text-slate-600; }.invest-card li { @apply border-b border-slate-100 pb-3 last:border-0; }.support { @apply border-emerald-200; }.support h3 { @apply text-emerald-700; }.warning { @apply border-amber-200; }.warning h3 { @apply text-amber-700; }.gap { @apply border-sky-200; }.gap h3 { @apply text-sky-700; }
+.timeline { @apply relative flex flex-col gap-5 py-3 pl-3; }.timeline-line { @apply absolute bottom-4 left-[19px] top-4 w-px bg-slate-200; }.timeline-event { @apply relative grid grid-cols-[62px_110px_1fr] items-start gap-3 pl-5 text-sm; }.timeline-dot { @apply absolute left-0 top-1.5 size-2.5 rounded-full ring-4 ring-white; }.timeline-dot.slate { @apply bg-slate-400; }.timeline-dot.teal { @apply bg-teal-500; }.timeline-dot.emerald { @apply bg-emerald-500; }.timeline-date { @apply font-mono text-xs font-bold text-slate-500; }.timeline-event b { @apply font-bold text-slate-800; }.timeline-event p { @apply mt-1 text-xs text-slate-500; }
+.roi-card { @apply rounded-xl bg-gradient-to-br from-[#0f766e] to-[#0f172a] p-6 text-white shadow-lg; }.roi-icon { @apply mb-5 flex size-10 items-center justify-center rounded-lg bg-white/10 text-teal-200; }.roi-icon svg { @apply size-5; }.roi-card h3 { @apply mt-2 text-2xl font-bold; }
